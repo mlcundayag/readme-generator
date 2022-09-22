@@ -24,6 +24,7 @@ const questions = () => {
                 }
             }    
         },
+        //gitHub Username
         {
             type: 'input',
             name: 'gitHub',
@@ -37,6 +38,7 @@ const questions = () => {
                 }
             }    
         },
+        //repository name
         {
             type: 'input',
             name: 'repoName',
@@ -50,17 +52,20 @@ const questions = () => {
                 }
             }    
         },
+        //description
         {
             type: 'input',
             name: 'description',
             message: 'Please provide a brief description of your project:',
-        },    
+        },   
+        //Tools 
         {
             type: 'checkbox',
             message: 'What tools did you use for this project?',
             name: 'tools',
             choices: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
         },
+        //License
         {
             type: 'list',
             message: 'What is the license of your project',
@@ -68,11 +73,19 @@ const questions = () => {
             choices: ['MIT', 'ISC', 'GNU LPL', 'Unlicense', 'none'],
             default: 'MIT'
         },
+        //Usage information
         {
             type: 'input',
             name: 'usage',
-            message: 'What is the usage information for your project?'
-        }, {
+            message: 'What are the usage information'
+        }, 
+        {
+            type: 'input',
+            name: 'install',
+            message: 'Please state the installation instructions:'
+        }, 
+        //Acknowledgements
+        {
             type: 'input',
             name: 'acknowledgement',
             message: 'Please list all your collaborators and references that you wish to acknowledge'
