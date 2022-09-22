@@ -1,49 +1,61 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 
 // TODO: Create an array of questions for user input
-const questions = inquirer
-.prompt([
-  {
-    type: 'input',
-    name: 'name',
-    message: 'What is your name?',
-  },
-  {
-    type: 'checkbox',
-    message: 'What languages do you know?',
-    name: 'stack',
-    choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-  },
-  {
-    type: 'list',
-    message: 'What is your preferred method of communication?',
-    name: 'contact',
-    choices: ['email', 'phone', 'telekinesis'],
-  },
-])
+const questions = () => {
+ return inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'checkbox',
+            message: 'What languages do you know?',
+            name: 'stack',
+            choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+        },
+        {
+            type: 'list',
+            message: 'What is your preferred method of communication?',
+            name: 'contact',
+            choices: ['email', 'phone', 'telekinesis'],
+        },
+    ])
+    .then(input => {
+        return input;
+    })
+};    
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fileName = `README-${data.name.toLowerCase().split(' ').join('')}.md`;
-    fs.writeFile(fileName, (data, null, '\t'), (err)=>
-    err ? console.log(err) : console.log('Success!'))
+    fs.writeFile(fileName, data, err => {
+        if (err) throw err;
+        console.log('README has been created!')
+    })
 }
+
 
 // TODO: Create a function to initialize app
 function init() {
-    questions
-    .then (writeToFile())
+    questions()
+        .then(input => {
+            writeToFile('./dist/README.md', input)
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }
 
-// Function call to initialize app
+// // Function call to initialize app
 init();
 
 
-
 // //Inquirer
-// console.log(questions)
+
 
 
