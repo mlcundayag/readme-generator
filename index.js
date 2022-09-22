@@ -70,7 +70,7 @@ const questions = () => {
             type: 'list',
             message: 'What is the license of your project',
             name: 'license',
-            choices: ['MIT', 'ISC', 'GNU LPL', 'Unlicense', 'none'],
+            choices: ['MIT', 'ISC', 'GNU GPL', 'Unlicense', 'none'],
             default: 'MIT'
         },
         //Usage information
