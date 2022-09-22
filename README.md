@@ -3,7 +3,7 @@
 # Node.js Challenge: Professional README Generator 
 
 ## Description
-In this challenge I created an professional README Generator using [Node.js](https://badges.aleen42.com/src/node.svg) and the terminal. The README Generator must include a title of the project, descriptions, table of contents, installations, usage, license, contributing, tests and questions sections. It must also include the license badge and a link to it. 
+In this challenge I created an professional README Generator using ![Node.js](https://badges.aleen42.com/src/node.svg) and the terminal. The README Generator must include a title of the project, descriptions, table of contents, installations, usage, license, contributing, tests and questions sections. It must also include the license badge and a link to it. 
 
 Other than the minimum requirements, I also added color styling in my terminal so that user are able to differentiate the questions and command line. 
 
