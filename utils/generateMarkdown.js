@@ -19,13 +19,13 @@ function renderLicenseBadge(license) {
 // // If there is no license, return an empty string
 function renderLicenseLink(license) { 
   if (license === 'MIT') {
-    return `[License Link](https://opensource.org/licenses/MIT)`
+    return `[MIT](https://opensource.org/licenses/MIT)`
   } else if (license === 'ISC') {
-    return `[License Link](https://opensource.org/licenses/ISC)`
+    return `[ISC](https://opensource.org/licenses/ISC)`
   } else if (license === 'GNU GPL'){
-    return `[License Link](https://www.gnu.org/licenses/gpl-3.0)`
+    return `[GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)`
   } else if (license === 'Unlicense') {
-    return `[License Link](http://unlicense.org/)`
+    return `[Unlicense](http://unlicense.org/)`
   } else {
     return '';
   }
@@ -46,9 +46,12 @@ function renderLicenseSection(data) {
 function generateMarkdown(data) {
   return `
   # ${data.title} ${renderLicenseBadge(data.license)}
+
   ## Description
   ${data.description}
+
   ## Table of Contents
+
   * [Installation](#Installation)
   * [Built With](#Built-With)
   * [Usage](#Usage)
@@ -86,8 +89,9 @@ function generateMarkdown(data) {
   
   ## Questions
   If you have any questions about the project you can reach out to me via email or GitHub with the information below.
-  >Email Address: ${data.email}
-  >GitHub : [${data.gitHub}](https://github.com/${data.gitHub})
+
+  - Email Address: ${data.email}
+  - GitHub : [${data.gitHub}](https://github.com/${data.gitHub})
   `;
 }
 

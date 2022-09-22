@@ -14,7 +14,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the title of your project? (Required)',
+            message: `\x1b[35mWhat is the title of your project? \x1b[33m(Required)\x1b[0m`,
             validate: function(name) {
                 if (name) {
                     return true;
@@ -28,7 +28,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'gitHub',
-            message: 'Please provide your github username: (Required)',
+            message: `\x1b[35mPlease provide your github username: \x1b[33m(Required)\x1b[0m`,
             validate: function(name) {
                 if (name) {
                     return true;
@@ -42,7 +42,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'repoName',
-            message: 'Please provide your repository(repo) name for this project: (Required)',
+            message: `\x1b[35mPlease provide your repository(repo) name for this project: \x1b[33m(Required)\x1b[0m`,
             validate: function(name) {
                 if (name) {
                     return true;
@@ -55,25 +55,25 @@ const questions = () => {
         {
             type: 'input',
             name: 'email',
-            message: 'What is your email address?'
+            message: `\x1b[35mWhat is your email address?\x1b[0m`
         },
         //description
         {
             type: 'input',
             name: 'description',
-            message: 'Please provide a brief description of your project:',
+            message: `\x1b[35mPlease provide a brief description of your project:\x1b[0m`,
         },   
         //Tools 
         {
             type: 'checkbox',
-            message: 'What tools did you use for this project?',
+            message: `\x1b[35mWhat tools did you use for this project?\x1b[0m`,
             name: 'tools',
             choices: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
         },
         //License
         {
             type: 'list',
-            message: 'What is the license of your project',
+            message: `\x1b[35mWhat is the license of your project\x1b[0m`,
             name: 'license',
             choices: ['MIT', 'ISC', 'GNU GPL', 'Unlicense', 'none'],
             default: 'MIT'
@@ -82,23 +82,23 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'What are the usage information'
+            message: `\x1b[35mWhat are the usage information\x1b[0m`
         }, 
         {
             type: 'input',
             name: 'install',
-            message: 'Please state the installation instructions:'
+            message: `\x1b[35mPlease state the installation instructions:\x1b[0m`
         },
         {
             type: 'input',
             name: 'test',
-            message: 'What are the test instruction for your project?'
+            message: `\x1b[35mWhat are the test instruction for your project?\x1b[0m`
         }, 
         //Acknowledgements
         {
             type: 'input',
             name: 'acknowledgement',
-            message: 'Please list all your collaborators and references that you wish to acknowledge'
+            message: `\x1b[35mPlease list all your collaborators and references that you wish to acknowledge\x1b[0m`
         },
     ])
     .then(input => {
