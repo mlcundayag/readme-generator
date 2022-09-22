@@ -55,8 +55,11 @@ function generateMarkdown(data) {
   * [License](#License)
   * [Contributing](#Contributing)
   * [Links](#Links)
+  * [Tests](#Tests)
   * [Questions](#Questions)
   ***
+
+
   ## Installation
   ${data.install}
   
@@ -77,9 +80,13 @@ function generateMarkdown(data) {
 
   1. [GitHub](https://github.com/${data.gitHub}/${data.repoName})
   2. [Website](https://${data.gitHub}.github.io/${data.repoName}/)
+
+  ## Tests
+  ${data.test}
   
   ## Questions
-  If you have any questions about the project you can reach out to me via email or GitHub with the information below. 
+  If you have any questions about the project you can reach out to me via email or GitHub with the information below.
+  >Email Address: ${data.email}
   >GitHub : [${data.gitHub}](https://github.com/${data.gitHub})
   `;
 }

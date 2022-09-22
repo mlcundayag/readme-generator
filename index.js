@@ -52,6 +52,11 @@ const questions = () => {
                 }
             }    
         },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?'
+        },
         //description
         {
             type: 'input',
@@ -83,6 +88,11 @@ const questions = () => {
             type: 'input',
             name: 'install',
             message: 'Please state the installation instructions:'
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'What are the test instruction for your project?'
         }, 
         //Acknowledgements
         {
