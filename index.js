@@ -3,28 +3,79 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
 const outputSuccessText = (text) => console.log(`\x1b[32m${text}\x1b[0m`);
+const outputErrorText = (text) => console.log(`\x1b[31m${text}\x1b[0m`);
 
 
 // TODO: Create an array of questions for user input
 const questions = () => {
  return inquirer
     .prompt([
+        //Title
         {
             type: 'input',
-            name: 'name',
-            message: 'What is your name?',
+            name: 'title',
+            message: 'What is the title of your project? (Required)',
+            validate: function(name) {
+                if (name) {
+                    return true;
+                } else {
+                    outputErrorText('You must enter your project title!')
+                    return false;
+                }
+            }    
         },
         {
+            type: 'input',
+            name: 'gitHub',
+            message: 'Please provide your github username: (Required)',
+            validate: function(name) {
+                if (name) {
+                    return true;
+                } else {
+                    outputErrorText('You must enter your github username')
+                    return false;
+                }
+            }    
+        },
+        {
+            type: 'input',
+            name: 'repoName',
+            message: 'Please provide your repository(repo) name for this project: (Required)',
+            validate: function(name) {
+                if (name) {
+                    return true;
+                } else {
+                    outputErrorText('You must enter your repo name')
+                    return false;
+                }
+            }    
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Please provide a brief description of your project:',
+        },    
+        {
             type: 'checkbox',
-            message: 'What languages do you know?',
-            name: 'stack',
-            choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+            message: 'What tools did you use for this project?',
+            name: 'tools',
+            choices: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
         },
         {
             type: 'list',
-            message: 'What is your preferred method of communication?',
-            name: 'contact',
-            choices: ['email', 'phone', 'telekinesis'],
+            message: 'What is the license of your project',
+            name: 'license',
+            choices: ['MIT', 'ISC', 'GNU LPL', 'Unlicense', 'none'],
+            default: 'MIT'
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'What is the usage information for your project?'
+        }, {
+            type: 'input',
+            name: 'acknowledgement',
+            message: 'Please list all your collaborators and references that you wish to acknowledge'
         },
     ])
     .then(input => {
